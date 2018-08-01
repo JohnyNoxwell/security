@@ -56,13 +56,28 @@ section
 .white
 	color: #fff
 
+.red
+	color: #FF0000
+.cutted
+	max-width: 75%
+	margin-top: 31px
+	margin-bottom: 80px
+	font-weight: 900
+	padding-left: 90px
 
 ::selection
 	background-color: $accent
 	color: #fff
 h1
 	font-size: 30px
-	font-weight: 900
+	font-weight: bolder
+	font-family: $default-font
+
+h2
+	font-size: 24px
+	font-family: $default-font
+	font-weight: bolder
+
 .main-screen
 	background: url(../img/main-section-bg.png) top center no-repeat
 	background-size: cover
@@ -201,7 +216,17 @@ h1
 		img
 			top: 30%
 			right: -20%
-
+.features
+	p
+		font-style: normal
+		font-weight: 900
+		line-height: normal
+		font-size: 18px
+		text-align: center
+		text-transform: uppercase
+		padding-top: 20px
+	&-item
+		flex-basis: 19%
 @media only screen and (max-width : 1200px)
 	.phones
 		.adress
@@ -284,6 +309,8 @@ h1
 	.soldiers
 		right: -195px
 	.align-content-md-stretch.d-flex.flex-wrap
+	.features-item:nth-child(4)
+		margin-right: 80px
 
 @media only screen and (max-width : 576px)
 	h1
@@ -295,6 +322,9 @@ h1
 		li
 			font-size: 12px
 
+
+	.features-item:nth-child(4)
+		margin-right: 0
 	.soldiers
 		position: static
 		margin-top: -25px
@@ -382,6 +412,23 @@ h1
 	.services> .container> h1
 		margin: 20px 0 20px 0
 		max-width: 70%
+
+
+	.cutted
+		font-size: 20px
+		max-width: 100%
+		padding-left: 15px
+		margin-top: 0
+		margin-bottom: 25px
+	.row.services-container
+		margin-right: 0
+	.features
+		p
+			font-size: 12px
+		img
+			max-width: 100%
+		&-item
+			flex-basis: 49%
 @media only screen and (min-width : 400px) and (max-width : 417px)
 	.services-container:nth-child(3)
 		.services-item:nth-child(1)
