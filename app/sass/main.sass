@@ -37,19 +37,23 @@ body textarea:required:valid
 html, body
 	height: 100%
 
+
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
 	line-height: 1.65
 	font-family: $default-font
-	overflow-x: hidden
+
 section
 	overflow: hidden
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
+.no-padding-all
+	padding-left: 0 !important
+	padding-right: 0 !important
 
 .text-center
 	text-align: center
@@ -58,6 +62,8 @@ section
 
 .red
 	color: #FF0000
+.big-margin
+	margin-bottom: 40px
 .cutted
 	max-width: 75%
 	margin-top: 31px
@@ -70,16 +76,16 @@ section
 	color: #fff
 h1
 	font-size: 30px
-	font-weight: bolder
+	font-weight: 900
 	font-family: $default-font
 
 h2
 	font-size: 24px
 	font-family: $default-font
-	font-weight: bolder
+	font-weight: 900
 
 .main-screen
-	background: url(../img/main-section-bg.png) top center no-repeat
+	//background: url(../img/main-section-bg.png) top center no-repeat
 	background-size: cover
 	//min-height: 100vh
 	display: flex
@@ -126,6 +132,66 @@ h2
 	height: 17px
 	display: inline-block
 	background: url("../img/phone.png")
+.contacts
+	overflow: visible
+	margin-top: 170px
+	@media screen and (max-width: 576px)
+		margin-top: 0
+		position: relative
+		top: 70px
+.contacts-inner
+	margin-bottom: 75px
+	background: #02192D
+	border-radius: 10px
+	padding: 32px 25px
+	margin-left: 50px
+	@media screen and (max-width: 992px)
+		margin-left: 0
+	@media screen and (max-width: 576px)
+		padding: 27px 14px
+		margin-left: 0
+		border-bottom-left-radius: 0
+		border-bottom-right-radius: 0
+		margin-bottom: 0
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		width: 140px
+		height: 125px
+		background: url("../img/logo_chop-mini-2.png")
+		top: -40px
+		right: -45px
+		z-index: 9999
+		@media screen and (max-width: 576px)
+			right: 10px
+	a
+		color: #fff
+		font-size: 18px
+		@media screen and (max-width: 576px)
+			font-size: 12px
+		span
+			font-weight: 700
+	ul
+		padding-left: 0
+	li
+		list-style: none
+		color: #fff
+		@media screen and (max-width: 576px)
+			font-size: 12px
+	i
+		display: inline-block
+		width: 17px
+		height: 17px
+		background-repeat: no-repeat
+		background-position: center
+		margin-right: 10px
+	.phone-small
+		background: url("../img/phone-small.png") no-repeat center
+	.adresss
+		background: url("../img/mark.png") no-repeat center
+	.mail
+		background: url("../img/mail.png") no-repeat center
 .phones
 	position: relative
 	.adress
@@ -139,6 +205,18 @@ h2
 			font-size: 18px !important
 			font-weight: bold
 			font-family: $default-font
+.yandex-map
+	position: absolute
+	right: 0
+	@media screen and (max-width: 576px)
+		position: static
+	iframe
+		@media screen and (max-width: 576px)
+			width: 100%
+			height: 151px
+		-webkit-border-radius: 10px
+		-moz-border-radius: 10px
+		border-radius: 10px
 
 .fullheight
 	justify-content: end
@@ -227,7 +305,354 @@ h2
 		padding-top: 20px
 	&-item
 		flex-basis: 19%
+.nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
+	color: goldenrod
+	transition: 0.3s
+#contactForm
+
+	@media screen and (max-width: 576px)
+		h1
+			margin-bottom: 0
+		padding-bottom: 0
+.contact-form
+	background: #02192D
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	border-radius: 10px
+	padding-top: 55px
+	h1
+		margin-bottom: 15px !important
+	@media screen and (max-width: 576px)
+		padding-top: 0
+		padding-bottom: 0
+	margin-top: 80px
+.contact-form-info
+	margin-left: 95px
+	h1
+		color: #fff
+		margin-bottom: 15px
+	p
+		font-size: 18px
+		color: #fff
+		margin-bottom: 55px
+form 
+	padding: 0 25px 25px 25px
+//CHECKBOXES
+
+.styled-input-single
+	position: relative
+	padding: 20px 0 20px 40px
+	text-align: left
+
+	label
+		color: #fff
+		font-size: 14px
+		cursor: pointer
+		&:before
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			border-radius: 50%
+
+		&:before
+			left: 0
+			width: 30px
+			height: 30px
+			margin: -15px 0 0
+			background: #f7f7f7
+			box-shadow: 0 0 1px grey
+
+		&:after
+			left: 5px
+			width: 20px
+			height: 20px
+			margin: -10px 0 0
+			opacity: 0
+			background: url("../img/checkbox.png")
+			background-position: center
+			background-repeat: no-repeat
+			background-color: red
+			transform: translate3d(-40px, 0, 0) scale(0.5)
+			transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out
+
+
+
+	input[type="radio"],
+	input[type="checkbox"]
+		position: absolute
+		top: 0
+		left: -9999px
+		visibility: hidden
+
+		&:checked + label
+			&:before
+
+			&:after
+				transform: translate3d(0, 0, 0)
+				opacity: 1
+
+
+
+
+input
+	-webkit-border-radius: 10px !important
+	-moz-border-radius: 10px !important
+	border-radius: 10px !important
+.styled-input--square
+	label
+		&:before
+		&:after
+			border-radius: 0
+
+
+
+
+.styled-input--rounded
+	label
+		&:before
+			border-radius: 10px
+
+		&:after
+			border-radius: 6px
+
+
+
+.styled-input--diamond
+	.styled-input-single
+		padding-left: 45px
+
+	label
+		&:before
+		&:after
+			border-radius: 0
+
+		&:before
+			transform: rotate(45deg)
+
+
+
+	input[type="radio"],
+	input[type="checkbox"]
+
+		&:checked + label
+			&:after
+				transform: rotate(45deg)
+				opacity: 1
+
+
+
+
+
+
+
+::placeholder  /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #02192D !important
+    opacity: 1
+    text-transform: uppercase 
+    font-weight: 700
+    font-size: 18px
+    font-family: $default-font
+ 
+input
+ 	padding: 25px 21px !important
+
+.red.btn
+	background: #FF0B00
+	color: #fff
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
+	border-radius: 10px
+	font-style: normal
+	font-weight: 900
+	line-height: normal
+	font-size: 24px
+	text-align: center
+	text-transform: uppercase
+	padding: 10px 0
+.red.btn:hover 
+	background: #ff0b00a3
+.features2
+	&-item
+		position: relative
+		img
+			position: absolute
+			z-index: 1
+		.btn
+			font-size: 18px
+			padding: 15px 40px
+		&-wrapper
+			background: #fff
+			border-radius: 10px
+			padding: 22px 15px
+			position: relative
+			z-index: 3
+		&-1
+			margin-bottom: 215px
+			img
+				top: -100px
+				left: -130px
+		&-2
+			margin-top: 220px
+			margin-bottom: 258px
+		&-3
+			.features2-item-wrapper
+				background: transparent
+			margin-bottom: 165px
+			h2
+				color: #fff !important
+				text-align: center
+				margin-bottom: 25px
+		&-4
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				width: 156px
+				height: 139px
+				background: url("../img/logo_chop-mini.png")
+				top: -40px
+				right: -62px
+				z-index: 9999
+			img.police-1
+				top: -78px
+				left: -115px
+			img.police-2
+				bottom: -175px
+				left: -154px
+			img.police-3
+				right: -148px
+				top: 31%
+		&-5
+			img.layer1
+				left: -101px
+			img.layer2
+				top: 190px
+				left: 200px
+			img.layer3
+				top: -49px
+				left: 97px
+			img.layer4
+				top: -87px
+				left: 240px
+			img.layer5
+				left: 393px
+				top: -34px
+			img.layer6
+				left: 400px
+				top: 205px
+	padding: 135px 0
+	margin-top: 100px
+	background: url("../img/rectangle2.png")
+	background-size: cover
+	h2
+		font-size: 30px
+		font-weight: 900
+		text-transform: uppercase
+		color: #000
+		margin-bottom: 10px
+	p
+		font-size: 14px
+	.row
+		margin-bottom: 30px
+.with-car
+	img
+		position: absolute
+		top: 40%
+		left: 20px
+		margin-bottom: 80px
+.sertificates
+		h1
+			margin-left: 60px
+			@media screen and (max-width: 576px)
+				margin-left: 0
+			text-transform: uppercase
+			font-weight: 900
+			margin-bottom: 42px
+		&-wrapper
+			margin-top: 100px
+			margin-bottom: 100px
+			padding: 40px
+			background: #02192D
+			border-radius: 10px
+			@media screen and (max-width: 576px)
+				text-align: center
+				img
+					display: inline-block
+
+			h2
+				font-weight: 700
+.license
+	margin-bottom: 30px
+	@media screen and (max-width: 576px)
+		margin-bottom: 75
+	img
+		margin-bottom: 13px
+
+.clients
+	h2
+		font-weight: 900
+		font-size: 30px
+		color: #000
+		margin-bottom: 3px
+		@media screen and (max-width: 576px)
+			font-size: 12px
+	p
+		font-size: 14px
+		color: #000
+		@media screen and (max-width: 576px)
+			font-size: 10px
+	.our-clients
+		margin-bottom: 150px
+		@media screen and (max-width: 576px)
+			margin-bottom: 40px
+footer
+	background: #02192D
+	@media screen and (max-width: 576px)
+		position: relative
+
+
+	p
+		margin-bottom: 0
+		color: #fff
+		line-height: 1.2
+		font-size: 14px
+.footer-inner
+	.row
+		overflow: hidden
+	background: url("../img/footer-logo.png")  #02192D no-repeat center left 50px
+	background-size: cover
+	padding-top: 100px
+	padding-bottom: 100px
+	position: relative
+	@media screen and (max-width: 576px)
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		text-align: center
+
+		background-size: cover
+		min-height: 350px
+
+	a
+		color: #fff
+		text-decoration: underline
+		position: relative
+		top: 85px
+		@media screen and (max-width: 576px)
+			position: static
+			margin: 50px 0
+			display: inline-block
+		&:hover
+			text-decoration: none
+	img
+		position: relative
+		top: 80px
+		@media screen and (max-width: 576px)
+			position: static
 @media only screen and (max-width : 1200px)
+
 	.phones
 		.adress
 			bottom: -18px
@@ -313,6 +738,41 @@ h2
 		margin-right: 80px
 
 @media only screen and (max-width : 576px)
+	.contact-form
+		margin-top: 35px
+	.features2
+		margin-top: 42px
+		h2
+			font-size: 20px
+		p
+			font-size: 10px
+			color: #02192D
+			line-height: 1.2
+	.sertificates
+		padding: 0 15px
+		&-wrapper
+			margin-top: 42px
+			margin-bottom: 42px
+			h2
+				font-size: 12px
+				margin-top: 35px
+				line-height: 1.5
+	.contact-form-info
+		margin-left: 0
+		text-align: center
+		padding: 20px
+		p
+			font-size: 12px
+			margin-bottom: 10px
+	form
+		button
+			font-size: 12px !important
+		input
+			padding: 18px 21px !important
+			
+	::placeholder
+		font-size: 12px
+		font-weight: 900
 	h1
 		font-size: 20px
 	.no-padding
@@ -421,7 +881,7 @@ h2
 		margin-top: 0
 		margin-bottom: 25px
 	.row.services-container
-		margin-right: 0
+		margin-right: -15px
 	.features
 		p
 			font-size: 12px
@@ -429,6 +889,34 @@ h2
 			max-width: 100%
 		&-item
 			flex-basis: 49%
+	.our-clients
+		img
+			margin: 0 auto
+		position: relative
+		top: -35px
+		.row:nth-child(1)
+			position: relative
+			left: -30px
+			h2, p
+				margin-left: 100px
+		.row:nth-child(3)
+			position: relative
+			left: -30px
+			img
+				margin-bottom: 10px
+			p, h2
+				margin-left: 65px
+		.row:nth-child(2)
+			h2,p
+				text-align: right
+				margin-right: 35px
+		.row:nth-child(4)
+			text-align: right
+			margin-right: 35px
+			p
+				margin-bottom: 0
+
+
 @media only screen and (min-width : 400px) and (max-width : 417px)
 	.services-container:nth-child(3)
 		.services-item:nth-child(1)
