@@ -208,6 +208,7 @@ h2
 .yandex-map
 	position: absolute
 	right: 0
+	z-index: 99
 	@media screen and (max-width: 576px)
 		position: static
 	iframe
@@ -584,7 +585,7 @@ input
 .license
 	margin-bottom: 30px
 	@media screen and (max-width: 576px)
-		margin-bottom: 75
+		margin-bottom: 75px
 	img
 		margin-bottom: 13px
 
@@ -609,32 +610,26 @@ footer
 	background: #02192D
 	@media screen and (max-width: 576px)
 		position: relative
-
-
+	.container
+		@media screen and (max-width: 576px)
+			background: url("../img/footer-logo.png")  #02192D no-repeat center left 20px
+			background-size: cover
 	p
 		margin-bottom: 0
 		color: #fff
 		line-height: 1.2
 		font-size: 14px
 .footer-inner
-	.row
-		overflow: hidden
 	background: url("../img/footer-logo.png")  #02192D no-repeat center left 50px
-	background-size: cover
+	background-size: contain
 	padding-top: 100px
 	padding-bottom: 100px
 	position: relative
 	@media screen and (max-width: 576px)
-		position: absolute
-		top: 0
-		right: 0
-		bottom: 0
-		left: 0
+		background: none
 		text-align: center
-
-		background-size: cover
-		min-height: 350px
-
+		padding-top: 100px
+		padding-bottom: 50px
 	a
 		color: #fff
 		text-decoration: underline
