@@ -1,6 +1,5 @@
 $(function() {
-
-    $('.parallax-window').parallax({imageSrc: '../img/main-section-bg.png'});
+if ( $(document).width() > 992 ) {
     var scene = document.getElementById('scene');
     var parallaxInstance = new Parallax(scene, {
         relativeInput: true
@@ -52,6 +51,9 @@ $(function() {
     var parallaxInstance = new Parallax(scene11, {
         relativeInput: true
     });
+}
+    $('.parallax-window').parallax({imageSrc: '../img/main-section-bg.png'});
+
 });
 $(document).ready(function () {
     //Menu button on click event
