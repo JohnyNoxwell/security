@@ -33,6 +33,8 @@ body textarea:focus:required:invalid
 body input:required:valid,
 body textarea:required:valid
 	color: #666
+body
+	width: 100%
 
 html, body
 	height: 100%
@@ -64,6 +66,9 @@ section
 	color: #FF0000
 .big-margin
 	margin-bottom: 40px
+	@media screen and (max-width: 576px)
+		margin-bottom: 0
+
 .cutted
 	max-width: 75%
 	margin-top: 31px
@@ -90,7 +95,214 @@ h2
 	//min-height: 100vh
 	display: flex
 	flex-direction: column
+	overflow: hidden
 
+// MOBILE MENU
+$black: #0e0e0e
+$orange: #fcb852
+$grey: #dedede
+$white: #fff
+.mobile-nav-button.mobile-button--open
+	background: none
+	background-color: #FFA800
+	border-radius: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	width: 30px
+	height: 30px
+	padding-left: 5px !important
+	.mobile-nav-button__line
+		background: #fff
+
+
+.mobile-nav-button
+	@media screen and (max-width: 992px)
+		display: block
+	width: 35px
+	display: none
+	position: absolute
+	margin: 2rem
+	right: 0
+	top: 107px
+	z-index: 9999
+	cursor: pointer
+	padding-left: 10px
+	background: url("../img/Ellipse.png") center
+	background-repeat: no-repeat
+	width: 35px
+	height: 35px
+	.mobile-nav-button__line
+
+		width: 20px
+		height: 2px
+		background: red
+		position: relative
+		transition: 1s ease
+		&:nth-of-type(1)
+			margin-top: 0.8rem
+		&:nth-of-type(2)
+			margin: 0.2rem 0
+
+
+
+	.mobile-nav-button__line--1
+		transform: rotate(45deg)
+		top: 0px
+		position: absolute
+
+	.mobile-nav-button__line--2
+		display: none
+
+	.mobile-nav-button__line--3
+		transform: rotate(135deg)
+		top: 13px
+		position: absolute
+
+
+
+//Mobile Menu
+
+.mobile-menu
+	display: block
+
+	width: 100vw
+	right: -100%
+	height: 100vh
+	background: #fff
+	position: absolute
+	z-index: 9998
+	transition: 0.6s ease
+	top: 0
+	opacity: 0
+	ul
+		position: relative
+		top: 50%
+		transform: translateY(-50%)
+		padding: 0
+		li
+			list-style: none
+			a
+				width: 100%
+				max-width: 1200px
+				margin: 0 auto
+				display: block
+				text-align: center
+				text-decoration: none
+				color: $black
+				font-size: 3rem
+				font-weight: bold
+				overflow: hidden
+				position: relative
+				&:after
+					content: ''
+					background: #02192D
+					width: 100%
+					height: 100%
+					position: absolute
+					right: -100%
+					top: 0
+					z-index: -1
+					transition: 0.4s ease
+
+				&:hover
+					color: red !important
+					&:after
+						right: 0
+						color: red
+
+					color: $white
+
+
+
+
+	img
+		position: absolute
+		width: 150px
+		display: block
+		left: 50%
+		top: 3rem
+		transform: translateX(-50%)
+		padding: 0
+		text-align: center
+
+
+.mobile-menu--open.mobile-menu
+  width: 100%
+  right: 0
+  opacity: 1
+  transition: 0.3s
+
+.mobile-menu
+  width: 0
+
+/* The container */
+.containerr
+	display: block
+	position: relative
+	padding-left: 35px
+	margin-bottom: 12px
+	cursor: pointer
+	font-size: 22px
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	margin-top: 10px
+
+.parsley-required
+  color: red
+/* Hide the browser's default checkbox */
+.containerr input
+	position: absolute
+	opacity: 0
+	cursor: pointer
+
+
+/* Create a custom checkbox */
+.checkmark
+	position: absolute
+	top: 0
+	left: 0
+	height: 25px
+	width: 25px
+	background-color: #eee
+	border-radius: 50%
+	border: 1px solid #fff
+
+
+/* On mouse-over, add a grey background color */
+.containerr:hover input ~ .checkmark
+	background-color: #ccc
+
+
+/* When the checkbox is checked, add a blue background */
+.containerr input:checked ~ .checkmark
+	background-color: red
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after
+	content: ""
+	position: absolute
+	display: none
+
+
+/* Show the checkmark when checked */
+.containerr input:checked ~ .checkmark:after
+	display: block
+
+
+/* Style the checkmark/indicator */
+.containerr .checkmark:after
+	left: 9px
+	top: 5px
+	width: 5px
+	height: 10px
+	border: solid white
+	border-width: 0 3px 3px 0
+	-webkit-transform: rotate(45deg)
+	-ms-transform: rotate(45deg)
+	transform: rotate(45deg)
 
 .banner-info
 	z-index: 2
@@ -111,6 +323,7 @@ h2
 	font-size: 14px
 	color: #fff
 	font-family: $default-font
+	z-index: 9999 !important
 .bg-light
 	background-color: transparent !important
 
@@ -124,6 +337,12 @@ h2
 		font-size: 24px
 		font-weight: 900
 		text-transform: uppercase
+
+input[type="submit"]
+	padding: 12px 0 !important
+	@media screen and (max-width: 576px)
+		font-size: 12px !important
+
 .phone
 	position: relative
 	top: 3px
@@ -215,9 +434,8 @@ h2
 		@media screen and (max-width: 576px)
 			width: 100%
 			height: 151px
-		-webkit-border-radius: 10px
-		-moz-border-radius: 10px
-		border-radius: 10px
+			border-top-right-radius: 0
+			border-top-left-radius: 0
 
 .fullheight
 	justify-content: end
@@ -228,6 +446,9 @@ h2
 	position: absolute
 	bottom: 0
 	right: 70px
+	z-index: 999 !important
+	img
+		z-index: 1
 .centered
 	padding-left: 20px
 
@@ -306,10 +527,17 @@ h2
 		padding-top: 20px
 	&-item
 		flex-basis: 19%
-.nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
 	color: goldenrod
 	transition: 0.3s
-#contactForm
+label
+	color: #fff
+	font-size: 14px !important
+	@media screen and (max-width: 576px)
+		font-size: 10px !important
+		margin-top: 20px !important
+		max-width: 70%
+
 
 	@media screen and (max-width: 576px)
 		h1
@@ -338,108 +566,9 @@ h2
 		margin-bottom: 55px
 form 
 	padding: 0 25px 25px 25px
-//CHECKBOXES
-
-.styled-input-single
-	position: relative
-	padding: 20px 0 20px 40px
-	text-align: left
-
-	label
-		color: #fff
-		font-size: 14px
-		cursor: pointer
-		&:before
-		&:after
-			content: ''
-			position: absolute
-			top: 50%
-			border-radius: 50%
-
-		&:before
-			left: 0
-			width: 30px
-			height: 30px
-			margin: -15px 0 0
-			background: #f7f7f7
-			box-shadow: 0 0 1px grey
-
-		&:after
-			left: 5px
-			width: 20px
-			height: 20px
-			margin: -10px 0 0
-			opacity: 0
-			background: url("../img/checkbox.png")
-			background-position: center
-			background-repeat: no-repeat
-			background-color: red
-			transform: translate3d(-40px, 0, 0) scale(0.5)
-			transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out
 
 
 
-	input[type="radio"],
-	input[type="checkbox"]
-		position: absolute
-		top: 0
-		left: -9999px
-		visibility: hidden
-
-		&:checked + label
-			&:before
-
-			&:after
-				transform: translate3d(0, 0, 0)
-				opacity: 1
-
-
-
-
-input
-	-webkit-border-radius: 10px !important
-	-moz-border-radius: 10px !important
-	border-radius: 10px !important
-.styled-input--square
-	label
-		&:before
-		&:after
-			border-radius: 0
-
-
-
-
-.styled-input--rounded
-	label
-		&:before
-			border-radius: 10px
-
-		&:after
-			border-radius: 6px
-
-
-
-.styled-input--diamond
-	.styled-input-single
-		padding-left: 45px
-
-	label
-		&:before
-		&:after
-			border-radius: 0
-
-		&:before
-			transform: rotate(45deg)
-
-
-
-	input[type="radio"],
-	input[type="checkbox"]
-
-		&:checked + label
-			&:after
-				transform: rotate(45deg)
-				opacity: 1
 
 
 
@@ -481,6 +610,9 @@ input
 		.btn
 			font-size: 18px
 			padding: 15px 40px
+			@media screen and (max-width: 576px)
+				font-size: 12px
+				padding: 5px 40px
 		&-wrapper
 			background: #fff
 			border-radius: 10px
@@ -489,21 +621,35 @@ input
 			z-index: 3
 		&-1
 			margin-bottom: 215px
+			@media screen and (max-width: 576px)
+				margin-bottom: 65px
 			img
+
 				top: -100px
 				left: -130px
+                z-index: 9999
+				@media screen and (max-width: 576px)
+					top: -62px
+					left: -40px
+					width: 320px
 		&-2
 			margin-top: 220px
 			margin-bottom: 258px
+			@media screen and (max-width: 576px)
+				margin-top: 60px
+				margin-bottom: 60px
 		&-3
 			.features2-item-wrapper
 				background: transparent
 			margin-bottom: 165px
+			@media screen and (max-width: 576px)
+				margin-bottom: 60px
 			h2
 				color: #fff !important
 				text-align: center
 				margin-bottom: 25px
 		&-4
+
 			&:after
 				content: ''
 				display: block
@@ -514,43 +660,90 @@ input
 				top: -40px
 				right: -62px
 				z-index: 9999
+				@media screen and (max-width: 576px)
+					width: 100px
+					height: 83px
+					-webkit-background-size: cover
+					background-size: cover
+					top: 46px
+					right: -42px
 			img.police-1
 				top: -78px
 				left: -115px
+				@media screen and (max-width: 576px)
+					top: -40px
+					left: -54px
+					width: 121px
 			img.police-2
 				bottom: -175px
 				left: -154px
+				@media screen and (max-width: 576px)
+					bottom: -14%
+					left: -24%
+					width: 150px !important
 			img.police-3
 				right: -148px
 				top: 31%
+				@media screen and (max-width: 576px)
+					right: -66px
+					top: 44%
+					width: 100px
 		&-5
 			img.layer1
+				@media screen and (max-width: 576px)
+					left: -15%
+					width: 35%
+					top: 16%
 				left: -101px
 			img.layer2
+				@media screen and (max-width: 576px)
+					left: 44%
+					width: 29%
+					top: 92%
 				top: 190px
 				left: 200px
 			img.layer3
 				top: -49px
 				left: 97px
+				@media screen and (max-width: 576px)
+					top: -18%
+					left: 18%
+					width: 12%
 			img.layer4
+				@media screen and (max-width: 576px)
+					top: -25%
+					left: 48%
+					width: 24%
 				top: -87px
 				left: 240px
 			img.layer5
+				@media screen and (max-width: 576px)
+					left: 88%
+					top: -9%
+					width: 29%
 				left: 393px
 				top: -34px
 			img.layer6
+				@media screen and (max-width: 576px)
+					left: 90%
+					top: 93%
+					width: 20%
 				left: 400px
 				top: 205px
 	padding: 135px 0
 	margin-top: 100px
-	background: url("../img/Rectangle2.png")
+	//background: url("../img/Rectangle2.png")
 	background-size: cover
+	@media screen and (max-width: 576px)
+		padding: 65px 0
 	h2
 		font-size: 30px
 		font-weight: 900
 		text-transform: uppercase
 		color: #000
 		margin-bottom: 10px
+		@media screen and (max-width: 768px)
+			font-size: 22px
 	p
 		font-size: 14px
 	.row
@@ -561,6 +754,14 @@ input
 		top: 40%
 		left: 20px
 		margin-bottom: 80px
+.with-car img
+  z-index: 9999
+
+		@media screen and (max-width: 576px)
+			top: 85%
+			left: 20px
+			margin-bottom: 80px
+			width: 224px
 .sertificates
 		h1
 			margin-left: 60px
@@ -682,6 +883,13 @@ footer
 		.services-item:nth-child(2)
 			img
 				right: -27%
+                z-index: 2
+.scene
+  right: -20% !important
+  z-index: 98 !important
+
+
+
 @media only screen and (max-width : 991px) and (min-width: 768px)
 	.container.fluid
 		max-width: 100%
@@ -723,16 +931,22 @@ footer
 			img
 				right: -14%
 @media only screen and (max-width : 768px)
+	.contact-form-info
+		margin-left: 30px
+		h1
+			margin-left: 0
 	.fullheight.container
 		margin-left: 0
 
 	.soldiers
-		right: -195px
+		right: -60px
 	.align-content-md-stretch.d-flex.flex-wrap
 	.features-item:nth-child(4)
 		margin-right: 80px
 
 @media only screen and (max-width : 576px)
+	.mb
+		margin-bottom: 10px
 	.contact-form
 		margin-top: 35px
 	.features2
@@ -760,8 +974,9 @@ footer
 			font-size: 12px
 			margin-bottom: 10px
 	form
-		button
+		input[type="submit"]
 			font-size: 12px !important
+
 		input
 			padding: 18px 21px !important
 			
@@ -916,3 +1131,7 @@ footer
 	.services-container:nth-child(3)
 		.services-item:nth-child(1)
 			padding-bottom: 121px
+.navbar-toggler.collapsed
+	display: none !important
+.navbar-toggler
+	display: none !important
