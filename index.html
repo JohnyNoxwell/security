@@ -17,6 +17,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
+
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#000">
     <!-- Windows Phone -->
@@ -26,13 +27,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="css/main.min.css">
 
 
 </head>
 
 <body>
-<section class="main-screen parallax-window" data-parallax="scroll" data-image-src="./img/main-section-bg.png" style="overflow: hidden">
+<section class="main-screen parallax-window" data-parallax="scroll" data-image-src="./img/main-section-bg.png"
+         style="overflow: hidden">
     <div class="mobile-nav-button">
         <div class="mobile-nav-button__line"></div>
         <div class="mobile-nav-button__line"></div>
@@ -66,7 +73,8 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#services">Услуги <span class="sr-only">(current)</span></a>
+                            <a class="nav-link scroll" href="#services">Услуги <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#about-us">О нас</a>
@@ -76,8 +84,10 @@
                         </li>
                         <li class="nav-item">
                             <ul class="phones">
-                                <li><a href="tel:83952294329" class="nav-link"><i class="phone"></i>8 (3952) 294 - 329</a></li>
-                                <li><a href="tel:83952294799" class="nav-link"><i class="phone"></i>8 (3952) 297 - 799</a></li>
+                                <li><a href="tel:83952294329" class="nav-link"><i class="phone"></i>8 (3952) 294 -
+                                    329</a></li>
+                                <li><a href="tel:83952294799" class="nav-link"><i class="phone"></i>8 (3952) 297 -
+                                    799</a></li>
                                 <li class="nav-link adress">ул. Ямская 20</li>
                             </ul>
                         </li>
@@ -233,21 +243,23 @@
             <form class="contact__form1" method="post" action="mail/mail1.php">
                 <div class="row">
                     <div class="form-group name col-md-4 col-sm-6 col-12">
-                        <input name="name" type="text" class="form-control name" id="exampleInputName12" placeholder="имя" required>
+                        <input name="name" type="text" class="form-control name" id="exampleInputName12"
+                               placeholder="имя" required>
                         <!-- <span class="form-error">please enter name</span> -->
                     </div>
                     <div class="form-group email col-md-4 col-sm-6 col-12">
-                        <input name="phone" type="tel" class="form-control email" id="exampleInputEmail12" placeholder="телефон" required>
+                        <input name="phone" type="tel" class="form-control email" id="exampleInputEmail12"
+                               placeholder="телефон" required>
                     </div>
                     <div class="form-group message" style="display: none">
-                        <textarea name="message" class="form-control message" rows="4" placeholder="Message" ></textarea>
+                        <textarea name="message" class="form-control message" rows="4" placeholder="Message"></textarea>
                         <!-- <span class="form-error">please enter message</span> -->
                     </div>
                     <div class="col-md-4 col-sm-6 col-12">
                         <input type="submit" class="btn btn-lg red btn-block text-uppercase" value="Отправить">
 
                         <div>
-                            <label class="containerr">Даю согласие на обработку персональных данных
+                            <label class="containerr">Даю согласие на обработку<br> персональных данных
                                 <input type="checkbox" checked="checked" name="second">
                                 <span class="checkmark"></span>
                             </label>
@@ -280,7 +292,7 @@
                     <img src="img/ak47.png" alt="" data-depth="0.05">
                 </div>
                 <div class="features2-item features2-item-4" id="scene9">
-                    <div class="features2-item-wrapper"  data-depth="0">
+                    <div class="features2-item-wrapper" data-depth="0">
                         <h2><span class="red">профессиональное </span>обучение всех бойцов</h2>
                         <p class="big-margin mb">Все наши охранники оканчивают негосударственное образовательное
                             учереждение ДПО «Выстрел» и имеют
@@ -305,9 +317,9 @@
                     <img src="img/GrandPowerT12.png" alt="" class="police-3" data-depth="0.05">
                 </div>
             </div>
-            <div class="col-sm-5 col-10 offset-sm-1 offset-1 with-car" >
+            <div class="col-sm-5 col-10 offset-sm-1 offset-1 with-car">
 
-                <div class="features2-item features2-item-2" id="scene10" >
+                <div class="features2-item features2-item-2" id="scene10">
                     <div class="features2-item-wrapper" data-depth="0">
                         <h2><span class="red">Быстро</span> отрабатываем тревоги</h2>
                         <p>ГБР п рибывает на тревожный объект <span class="red">до 5 минут.</span></p>
@@ -319,11 +331,11 @@
                 <div class="features2-item features2-item-3 text-center">
                     <div class="features2-item-wrapper">
                         <h2 class="white text-uppercase">Доверьте охрану<br>профессионалам</h2>
-                        <a href="#contact" class="btn red text-uppercase scroll" >Консультация</a>
+                        <a href="#contact" class="btn red text-uppercase scroll">Консультация</a>
                     </div>
                 </div>
                 <div class="features2-item features2-item-5" id="scene11">
-                    <div class="features2-item-wrapper"  data-depth="0">
+                    <div class="features2-item-wrapper" data-depth="0">
                         <h2>Работаем <span class="red">с современным оборудованием</span></h2>
                         <p>Пультовая охрана, тревожные кнопки, камеры видеонаблюдения, датчики противопожарной
                             охраны.</p>
@@ -355,10 +367,14 @@
         </div>
         <h1><span class="red">Лицензии </span> и сертификаты:</h1>
         <div class="row  license">
-            <div class="col-sm-3 col-6"><img src="img/license1.png" alt="" class="img-responsive"></div>
-            <div class="col-sm-3 col-6"><img src="img/license2.png" alt="" class="img-responsive"></div>
-            <div class="col-sm-3 col-6"><img src="img/license3.png" alt="" class="img-responsive"></div>
-            <div class="col-sm-3 col-6"><img src="img/license4.png" alt="" class="img-responsive"></div>
+            <a class="col-sm-3 col-6" data-fancybox="gallery" href="img/license1.png"><img src="img/license1.png" alt=""
+                                                                                           class="img-responsive"></a>
+            <a class="col-sm-3 col-6" data-fancybox="gallery" href="img/license2.png"><img src="img/license2.png" alt=""
+                                                                                           class="img-responsive"></a>
+            <a class="col-sm-3 col-6" data-fancybox="gallery" href="img/license3.png"><img src="img/license3.png" alt=""
+                                                                                           class="img-responsive"></a>
+            <a class="col-sm-3 col-6" data-fancybox="gallery" href="img/license4.png"><img src="img/license4.png" alt=""
+                                                                                           class="img-responsive"></a>
         </div>
         <h1 class="text-uppercase">Наши <span class="red"> клиенты:</span></h1>
         <div class="our-clients">
@@ -411,21 +427,24 @@
             <form class="contact__form" method="post" action="mail/mail.php">
                 <div class="row">
                     <div class="form-group name col-md-4 col-sm-6 col-12">
-                        <input name="name" type="text" class="form-control name" id="exampleInputName1" placeholder="имя" required>
+                        <input name="name" type="text" class="form-control name" id="exampleInputName1"
+                               placeholder="имя" required>
                         <!-- <span class="form-error">please enter name</span> -->
                     </div>
                     <div class="form-group email col-md-4 col-sm-6 col-12">
-                        <input name="phone" type="tel" class="form-control email" id="exampleInputEmail1" placeholder="телефон" required>
+                        <input name="phone" type="tel" class="form-control email" id="exampleInputEmail1"
+                               placeholder="телефон" required>
                     </div>
                     <div class="form-group message" style="display: none">
-                        <textarea name="message" class="form-control message" rows="4" placeholder="Message" ></textarea>
+                        <textarea name="message" class="form-control message" rows="4" placeholder="Message"></textarea>
                         <!-- <span class="form-error">please enter message</span> -->
                     </div>
                     <div class="col-md-4 col-sm-6 col-12">
                         <input type="submit" class="btn btn-lg red btn-block text-uppercase" value="Отправить">
 
-                        <div>
-                            <label class="containerr">Даю согласие на обработку персональных данных
+                        <div class="text-center">
+                            <label class="containerr d-inline-block d-sm-block text-left">Даю согласие на обработку<br>
+                                персональных данных
                                 <input type="checkbox" checked="checked" name="second">
                                 <span class="checkmark"></span>
                             </label>
@@ -449,19 +468,23 @@
                 <div class="contacts-inner">
                     <ul>
                         <li><i class="mail"></i><a href="mailto:mail@mail.ru">mail@mail.ru</a></li>
-                        <li><i class="phone-small"></i><a href="tel:83952297799">8 3952 <span class="red">297 799</span></a></li>
-                        <li><i class="phone-small"></i><a href="tel:83952297329">8 3952 <span class="red">297 329</span></a></li>
+                        <li><i class="phone-small"></i><a href="tel:83952297799">8 3952 <span class="red">297 799</span></a>
+                        </li>
+                        <li><i class="phone-small"></i><a href="tel:83952297329">8 3952 <span class="red">297 329</span></a>
+                        </li>
                         <li><i class="adresss"></i>Иркутск, ул. Ямская 20</li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-6 yandex-map">
-                <iframe src="https://yandex.ru/map-widget/v1/-/CBusm8TF3B" width="100%" height="400" frameborder="0" allowfullscreen="true"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/-/CBusm8TF3B" width="100%" height="400" frameborder="0"
+                        allowfullscreen="true"></iframe>
             </div>
         </div>
     </div>
 </section>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -493,12 +516,22 @@
                     <a href="#">Политика конфиденциальности</a>
                 </div>
                 <div class="col-sm-4 litvinenko text-md-right">
-                    <img src="img/foter-logo-2.png" alt="">
+                    <img src="img/logo_litvinenko.svg" alt="" style="max-width: 150px">
                 </div>
             </div>
         </div>
     </div>
 </footer>
+<div class="call-btn">
+    <a href="tel:9999999">
+        <div class="pulse">
+            <div class="cursor"></div>
+            <div class="phone-iconic"><i></i></div>
+        </div>
+    </a>
+
+</div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -508,6 +541,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>-->
 <script src="js/scripts.min.js"></script>
 
